@@ -31,7 +31,7 @@ def assemble_string(string, delim):
     # print unavailable chars
     if missing_chars:
         print('[+] Character(s) \'' + '\', \''.join(
-            map(str, missing_chars)) + '\' not found in any available class docstrings')
+            map(str, set(missing_chars))) + '\' not found in any available class docstrings')
         return ''
 
     return delim.join(chars_found_idxs)
